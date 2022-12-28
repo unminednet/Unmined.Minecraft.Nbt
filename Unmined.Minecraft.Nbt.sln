@@ -1,0 +1,31 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.5.33209.295
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Unmined.Minecraft.Nbt", "Unmined.Minecraft.Nbt\Unmined.Minecraft.Nbt.csproj", "{CA7A1AFC-63F1-4400-9BC2-F4A52C1637A0}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Unmined.Minecraft.Nbt.UnitTests", "Unmined.Minecraft.Nbt.UnitTests\Unmined.Minecraft.Nbt.UnitTests.csproj", "{A58A7ED0-AB17-4D69-A4D3-1DFFD3B014B2}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{CA7A1AFC-63F1-4400-9BC2-F4A52C1637A0}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{CA7A1AFC-63F1-4400-9BC2-F4A52C1637A0}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{CA7A1AFC-63F1-4400-9BC2-F4A52C1637A0}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{CA7A1AFC-63F1-4400-9BC2-F4A52C1637A0}.Release|Any CPU.Build.0 = Release|Any CPU
+		{A58A7ED0-AB17-4D69-A4D3-1DFFD3B014B2}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A58A7ED0-AB17-4D69-A4D3-1DFFD3B014B2}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A58A7ED0-AB17-4D69-A4D3-1DFFD3B014B2}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A58A7ED0-AB17-4D69-A4D3-1DFFD3B014B2}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {917CBF36-40FF-40AF-BC63-77E4D3E53E78}
+	EndGlobalSection
+EndGlobal

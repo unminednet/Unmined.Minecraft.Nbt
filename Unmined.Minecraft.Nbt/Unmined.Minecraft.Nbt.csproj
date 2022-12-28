@@ -1,0 +1,39 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+	<PropertyGroup>
+		<TargetFramework>net6.0</TargetFramework>
+		<ImplicitUsings>enable</ImplicitUsings>
+		<Nullable>enable</Nullable>
+		<LangVersion>10.0</LangVersion>
+		<GenerateDocumentationFile>true</GenerateDocumentationFile>
+
+		<Version>0.1.1</Version>
+
+		<GeneratePackageOnBuild>True</GeneratePackageOnBuild>
+
+		<Description>Library for working with the Named Binary Tag data format used by Minecraft.</Description>
+		<RepositoryUrl>https://github.com/unminednet/Unmined.Minecraft.Nbt.git</RepositoryUrl>
+		<PackageProjectUrl>https://github.com/unminednet</PackageProjectUrl>
+		<PackageLicenseExpression>MIT</PackageLicenseExpression>
+		<PackageReadmeFile>README.md</PackageReadmeFile>
+		<Authors>Balázs Farkas</Authors>
+		<Copyright>Copyright (C) 2011-2022 Balázs Farkas</Copyright>
+		<PackageTags>minecraft;unmined</PackageTags>
+		<RepositoryType>git</RepositoryType>
+	</PropertyGroup>
+
+	<ItemGroup>
+		<None Include="../LICENSE.txt" Link="LICENSE.txt" Pack="true" PackagePath="$(PackageLicenseFile)">
+			<CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+		</None>
+		<None Include="../README.md" Link="README.md" Pack="true" PackagePath="$(PackageReadmeFile)">
+			<CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+		</None>
+	</ItemGroup>
+
+	<ItemGroup>
+		<PackageReference Include="Microsoft.Toolkit.HighPerformance" Version="7.1.2" />
+		<PackageReference Include="Unmined.Allocation" Version="0.1.1" />
+	</ItemGroup>
+
+</Project>
