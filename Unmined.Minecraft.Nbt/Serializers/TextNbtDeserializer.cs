@@ -212,7 +212,7 @@ public static class TextNbtDeserializer
                         throw new InvalidDataException(
                             $"End of input reached while reading a compound tag starting at position {startPosition}");
 
-                    var value = ReadValueTag(parser);
+                    var value = ReadTag(parser);
 
                     items.Add(name, value);
 
