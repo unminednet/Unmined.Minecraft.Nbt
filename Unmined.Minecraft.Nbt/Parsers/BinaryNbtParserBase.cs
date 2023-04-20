@@ -2,7 +2,7 @@
 using System.Buffers.Binary;
 using System.Globalization;
 using System.Text;
-using Microsoft.Toolkit.HighPerformance;
+using CommunityToolkit.HighPerformance;
 using Unmined.Allocation;
 
 namespace Unmined.Minecraft.Nbt.Parsers;
@@ -11,7 +11,7 @@ public abstract class BinaryNbtParserBase : IBufferedBinaryNbtParser
 {
     public static int StateStackDepth = 64;
 
-    private readonly ParserState[] _stateStack;
+    private ParserState[] _stateStack;
     private int _stateStackPointer;
     private ParserState _state;
 
@@ -385,7 +385,12 @@ public abstract class BinaryNbtParserBase : IBufferedBinaryNbtParser
     private void Push(ParserState state)
     {
         if (_stateStackPointer >= _stateStack.Length)
-            throw new StackOverflowException();
+        {
+            var newStack = Allocator<ParserState>.Shared.Rent(_stateStack.Length + 64);
+            _stateStack.CopyTo(newStack.AsSpan());
+            Allocator<ParserState>.Shared.Return(_stateStack);
+            _stateStack = newStack;
+        }
 
         _stateStack[_stateStackPointer++] = state;
     }
