@@ -49,15 +49,12 @@ public class BinaryNbtStreamParser : BinaryNbtParserBase
             _dataBuffer = Allocator<byte>.Shared.Rent(DataLength);
         }
 
-        if (_reader.Read(_dataBuffer, 0, DataLength) != DataLength)
-            throw new EndOfStreamException();
+        _reader.BaseStream.ReadExactly(_dataBuffer, 0, DataLength);
     }
 
     protected override byte InternalReadByte()
     {
-        // avoid allocation in stream.ReadByte() 
-        if (_reader.Read(_byteBuf, 0, 1) != 1)
-            throw new EndOfStreamException();
+        _reader.BaseStream.ReadExactly(_byteBuf, 0, 1);
 
         return _byteBuf[0];
     }
@@ -74,8 +71,7 @@ public class BinaryNbtStreamParser : BinaryNbtParserBase
 
     protected override void InternalReadTagName()
     {
-        if (_reader.Read(_nameBuffer, 0, NameLength) != NameLength)
-            throw new EndOfStreamException();
+        _reader.BaseStream.ReadExactly(_nameBuffer, 0, NameLength);
     }
 
     protected override void InternalSkip(int len)
